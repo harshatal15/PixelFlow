@@ -1,52 +1,121 @@
 # PixelFlow
 
-PixelFlow is a media SaaS app for uploading, transforming, and sharing images and videos. It's built on Next.js with Cloudinary handling the media processing, Prisma/NeonDB for storage, and Clerk for auth.
+PixelFlow is a full-stack AI-powered media processing platform built with **Next.js**, **TypeScript**, and **Cloudinary**. It enables users to upload, optimize, transform, and manage images and videos through a modern web interface, with secure authentication and cloud-based media storage.
 
 ## Features
 
-- Sign-in/sign-up with Clerk
-- Upload images and generate social-media-ready crops/formats through Cloudinary
-- Upload and compress videos, with automatic format optimization
-- Dashboard to browse, preview, and download uploaded videos
-- Postgres (NeonDB) database via Prisma to keep track of everything you upload
+- Secure authentication with Clerk
+- Upload and manage images and videos
+- AI-powered image transformations using Cloudinary
+- Video compression and automatic format optimization
+- Responsive dashboard for browsing uploaded media
+- Preview and download processed images and videos
+- Persistent storage using Prisma and NeonDB (PostgreSQL)
+- Modern UI built with Tailwind CSS and DaisyUI
 
-## Stack
+---
 
-- Next.js (App Router)
-- Clerk for authentication
-- Cloudinary for media storage/transformation
-- Prisma + NeonDB (Postgres)
-- Tailwind CSS + Daisy UI
+## Tech Stack
 
-## Setup
+| Category | Technologies |
+|----------|--------------|
+| Framework | Next.js (App Router) |
+| Language | TypeScript |
+| Authentication | Clerk |
+| Media Processing | Cloudinary |
+| Database | PostgreSQL (NeonDB) |
+| ORM | Prisma |
+| Styling | Tailwind CSS, DaisyUI |
 
-Install dependencies:
+---
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/pixelflow.git
+cd pixelflow
+```
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-Copy `env.sample` to `.env` and fill in your Clerk, Cloudinary, and database credentials:
+### Configure environment variables
+
+Copy the sample environment file.
 
 ```bash
 cp env.sample .env
 ```
 
-Set up the database:
+Update the required environment variables for:
+
+- Clerk
+- Cloudinary
+- NeonDB
+- Prisma
+
+### Generate the Prisma Client
 
 ```bash
 npx prisma generate
+```
+
+### Apply database migrations
+
+```bash
 npx prisma migrate deploy
 ```
 
-Run it:
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
+Visit **http://localhost:3000** in your browser.
+
+---
+
+## Project Structure
+
+```text
+app/            Next.js App Router
+components/     Shared UI components
+prisma/         Prisma schema
+public/         Static assets
+types/          TypeScript types
+```
+
+---
+
+## Future Improvements
+
+- AI background removal
+- Image upscaling
+- Batch media processing
+- Drag-and-drop uploads
+- Media search and filtering
+- User storage analytics
+
+---
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
+
+---
+
+## Acknowledgements
+
+- Next.js
+- Clerk
+- Cloudinary
+- Prisma
+- NeonDB
+- Tailwind CSS
+- DaisyUI
